@@ -1,12 +1,11 @@
 package benchmark.importer.core.contract;
 
-import java.util.zip.ZipInputStream;
+import java.io.InputStream;
 
 import benchmark.importer.core.model.ImportedBenchmarkModel;
 
 public interface BenchmarkImporter {
 	
-	boolean canImport(ZipInputStream zipWithAssetsForImport);
-	boolean isValid();
-	ImportedBenchmarkModel importBenchmark(String documentDirPath, ZipInputStream zipWithAssetsForImport);
+	boolean canImport(InputStream zipWithAssetsForImport);
+	ImportedBenchmarkModel importBenchmark(String documentDirPath, InputStream zipWithAssetsForImport);
 }
